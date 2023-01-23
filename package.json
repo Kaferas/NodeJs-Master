@@ -1,0 +1,24 @@
+{
+  "name": "nodee",
+  "version": "1.0.0",
+  "description": "Learn Fullstack application with NodeJs ",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Kaferas/NodeJs-Master.git"
+  },
+  "keywords": [
+    "NodeJs",
+    "MongoDb",
+    "JavaScript"
+  ],
+  "author": "Kaferas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaferas/NodeJs-Master/issues"
+  },
+  "homepage": "https://github.com/Kaferas/NodeJs-Master#readme"
+}
