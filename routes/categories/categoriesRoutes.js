@@ -1,69 +1,25 @@
-const express= require("express")
+const express= require("express");
+const { addCategorieCtrl, getAllCategoriesCtrl, getOneCategorieCtrl, deleteCategorieCtrl, updateCategorieCtrl } = require("../../controllers/categories/categoriesController");
 
 categoriesRouter=express.Router()
 
 
         
 // POST : /api/v1/categories
-categoriesRouter.post('/',async(req,res)=>{
-    try {
-        res.json({
-            status:"success",
-            data: "Category Created"
-        })
-    } catch (error) {
-        res.json(error.message)
-    }
-});
+categoriesRouter.post('/',addCategorieCtrl);
 
         
-    // GET : /api/v1/categories
-    categoriesRouter.get('/',async(req,res)=>{
-        try {
-            res.json({
-                status:"success",
-                data: "List Category Route "
-            })
-        } catch (error) {
-            res.json(error.message)
-        }
-    });
+// GET : /api/v1/categories
+categoriesRouter.get('/',getAllCategoriesCtrl);
 
 // GET : /api/v1/categories/:id
-categoriesRouter.get('/:Id',async(req,res)=>{
-        try {
-            res.json({
-                status:"success",
-                data: "Category route"
-            })
-        } catch (error) {
-            res.json(error.message)
-        }
-    });
+categoriesRouter.get('/:Id',getOneCategorieCtrl);
 
 
 // DELETE : /api/v1/categories/:Id
-categoriesRouter.delete('/:id',async(req,res)=>{
-        try {
-            res.json({
-                status:"success",
-                data: " category delete route"
-            })
-        } catch (error) {
-            res.json(error.message)
-        }
-    });
+categoriesRouter.delete('/:id',deleteCategorieCtrl);
 
 // PUT : /api/v1/categories/:Id
-categoriesRouter.put('/:id',async(req,res)=>{
-    try {
-        res.json({
-            status:"success",
-            data: "Update category route"
-        })
-    } catch (error) {
-        res.json(error.message)
-    }
-});
+categoriesRouter.put('/:id',updateCategorieCtrl);
 
 module.exports=categoriesRouter
