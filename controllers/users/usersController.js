@@ -1,8 +1,24 @@
+const User = require("../../models/User/User")
+
 const registerUserCtrl=async(req,res)=>{
+const {firstname,lastname,email,password} = (req.body)
     try {
+        const userFound=User.findOne({email})
+        console.log(userFound);
+        if(userFound){
+            return res.json({
+                "message":"User Already Exist"
+            })
+        }
+        const user= await User.create({
+        firstname,  
+        lastname,
+        email,
+        password
+        })
         res.json({
             status:"success",
-            data: "user registered"
+            data: user
         })
     } catch (error) {
         res.json(error.message)
